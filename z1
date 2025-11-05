@@ -1,0 +1,48 @@
+using System;
+
+namespace starboy1
+{
+    public class Calculator
+    {
+        public static double Add(double a, double b)
+        {
+            return a + b;
+        }
+        public static double Minus(double a, double b)
+        {
+            return a - b;
+        }
+
+        public static double Mult(double a, double b)
+        {
+            return a * b;
+        }
+
+        public static double Div(double a, double b)
+        {
+            if (b == 0)
+            {
+                Console.WriteLine("Ошибка: Деление на ноль!");
+                return 0;
+            }
+            return a / b;
+        }
+    }
+}
+
+using System;
+
+namespace starboy1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine($"10 + 5 = {Calculator.Add(10, 5)}");
+            Console.WriteLine($"10 - 5 = {Calculator.Minus(10, 5)}");
+            Console.WriteLine($"6 * 7 = {Calculator.Mult(6, 7)}");
+            Console.WriteLine($"15 / 3 = {Calculator.Div(15, 3)}");
+            Calculator.Div(10, 0);
+        }
+    }
+}
